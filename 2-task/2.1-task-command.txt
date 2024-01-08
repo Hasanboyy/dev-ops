@@ -1,0 +1,3 @@
+k label pods nginx2 owner=hasanboy -n s-28
+
+kubectl run nginx1 --image nginx:latest --port 80 -n s-28

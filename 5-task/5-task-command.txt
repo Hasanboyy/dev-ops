@@ -1,0 +1,2 @@
+k get deployment -n s-28
+kubectl create deployment hr-app --image nginx:1.18 --port 80 -replicas 2 -n s-28 --dry-run=client -o yaml > deployment.yaml 

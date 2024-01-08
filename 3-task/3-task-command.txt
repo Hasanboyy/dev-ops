@@ -1,0 +1,2 @@
+kubectl run busybox --image busybox:latest -n s-28 --command sleep 3600
+

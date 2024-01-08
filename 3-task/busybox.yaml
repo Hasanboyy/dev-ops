@@ -1,0 +1,54 @@
+Name:             busybox
+Namespace:        s-28
+Priority:         0
+Service Account:  default
+Node:             node3/65.109.14.160
+Start Time:       Mon, 08 Jan 2024 20:20:15 +0500
+Labels:           run=busybox
+Annotations:      <none>
+Status:           Running
+IP:               10.233.68.168
+IPs:
+  IP:  10.233.68.168
+Containers:
+  busybox:
+    Container ID:  containerd://1ab268155d7c85d871a282ef0edec3fa0c24d4e560ea53c103aa539aeaaad28f
+    Image:         busybox:latest
+    Image ID:      docker.io/library/busybox@sha256:ba76950ac9eaa407512c9d859cea48114eeff8a6f12ebaa5d32ce79d4a017dd8
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sleep
+      3600
+    State:          Running
+      Started:      Mon, 08 Jan 2024 20:20:16 +0500
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-w9mrj (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-w9mrj:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  3m44s  default-scheduler  Successfully assigned s-28/busybox to node3
+  Normal  Pulling    3m44s  kubelet            Pulling image "busybox:latest"
+  Normal  Pulled     3m43s  kubelet            Successfully pulled image "busybox:latest" in 814ms (814ms including waiting)
+  Normal  Created    3m43s  kubelet            Created container busybox
+  Normal  Started    3m43s  kubelet            Started container busybox

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-app
+  name: flask-app
+  namespace: s-28
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - image: nvrbckdown/flask-app:practice-2
+        name: flask-app
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}
